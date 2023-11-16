@@ -39,7 +39,7 @@ include 'connect.php';
 
         <br><br><br><br><br><br>
 
-        <button class="btn btn-primary"><a href="merchantDash.php" class="text-light">Back to Dashboard</a></button>
+        <button class="btn btn-primary"><a href="Dashboard.php" class="text-light">Back to Dashboard</a></button>
     
 
   <table class="table">
