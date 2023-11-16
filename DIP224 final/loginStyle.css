@@ -1,0 +1,142 @@
+
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    font-family: Verdana, Verdana, Geneva, Tahoma, sans-serif;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform:capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 80%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+
+
+}
+
+header{
+    position: fixed;
+    top:0;left:0;right:0;
+    background-color: peachpuff;
+    padding:2rem 8% ;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .1);
+    
+
+}
+header .logo{
+    font-size: 3rem;
+    color:orange;
+    font-weight: bolder;
+
+
+}
+
+header .logo .span{
+    color:var(--pink);
+}
+
+
+
+header .navbar a{
+    font-size: 2rem;
+    padding:0 1rem;
+    color:orange
+
+
+}
+
+
+
+.form-container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-bottom: 60px;
+    background:orange;
+}
+
+.form-container form{
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,1);
+    background: #fff;
+    text-align: center;
+}
+
+.form-container form h3{
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.form-container form input{
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 17px;
+    margin: 8px 0;
+    background: #eee;
+    border-radius: 5px;
+}
+
+.form-container form .form-btn{
+    background: #fbd0d9;
+    color: red;
+    text-transform: capitalize;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.form-container form .form-btn:hover{
+    background: red;
+    color: #fff;
+}
+
+.form-container form p{
+    margin-top: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+
+
+.footer .box-container {
+    display:flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+}
+
+.footer .box-container .box{
+    flex: 1 1 25rem;
+}
+
+.footer .box-container .box h3{
+    color:#333;
+    font-size: 2.5rem;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a {
+    display: block;
+    color: #666;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+
+
+
+
+
+

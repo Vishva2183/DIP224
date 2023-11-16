@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="rateus.css">
+    </head>
+    <body>
+        <div class="container">
+            <form action="rateusprocess1.php" method="POST">
+                <div class="row">
+                    <h3 class="title">Rate Us</h3>
+                        <p>Please help us by rating us as it helps us to improve users experience in the future </p>
+                    <div class="col-md-9">
+
+                        <div class="rate">
+                            <h4>How was our service so far?</h4>
+                            <span id="1" class="rate-btn">&#9733;</span>
+                            <span id="2" class="rate-btn">&#9733;</span>
+                            <span id="3" class="rate-btn">&#9733;</span>
+                            <span id="4" class="rate-btn">&#9733;</span>
+                            <span id="5" class="rate-btn">&#9733;</span>
+                            <input type="hidden" id="rating" name="rating" value="0">
+                        </div>
+
+                        
+                        <br>
+                        
+                        <br>
+                        
+                       
+                        <div class="form-group">
+                            <label for="full-name">Full Name:</label>
+                            <input type="text" class="form-control" id="fullname" name ="fullname" placeholder="Jovian Dominic" style="width:660px">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" name = "email"placeholder="example@example.com" style="width:660px">
+                        </div>
+                       
+                        
+                        <div class="form-group ">
+                            <div class="form-group">
+                                <label for="Phone number">Phone Number</label>
+                                <input type="text" class="form-control" id="phone-number" name ="phone number" placeholder="0174445411" style="width:660px">
+                            </div>
+                            
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="address">Feedback:</label>
+                            <textarea id="message" rows="4" class="form-control" id="address" name = "address" placeholder="What can we do in the future?" style="width:660px"></textarea>
+                        </div>
+                        <input type="submit" value="Send" class="btn btn-primary">
+                    </div>
+
+                    
+                    
+                       
+                        
+
+                    
+                </div>
+            </form>
+
+            <script>
+                const rateButtons = document.querySelectorAll('.rate-btn');
+                const ratingInput = document.getElementById('rating');
+            
+                rateButtons.forEach((button, index) => {
+                    button.addEventListener('click', () => {
+                        const rating = index + 1; // Index is 0-based, so we add 1
+            
+                        // Update the visual rating by filling or emptying stars
+                        rateButtons.forEach((star, i) => {
+                            star.innerHTML = i < rating ? '★' : '☆';
+                        });
+            
+                        // Update the hidden input value with the selected rating
+                        ratingInput.value = rating;
+                    });
+                });
+            </script>
+            
+            
+                       
+        
+            
+        
+    </body>
+</html>

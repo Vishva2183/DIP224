@@ -1,0 +1,122 @@
+<?php
+// Check if the form was submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get user input from the form
+    $name = $_POST['name'];
+    $email=$_POST['email'];
+    $password = $_POST['password'];
+
+
+    // Replace these values with your database credentials
+    $db_host = 'localhost';
+    $db_user = 'root';
+    $db_pass = '';
+    $db_name = 'dip224';
+
+    // Create a database connection
+    $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+
+    // Check if the connection was successful
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    // Query the database to check if the provided username and password match
+    $query = "SELECT * FROM ministry WHERE name = '$name' AND password = '$password'";
+    $result = mysqli_query($conn, $query);
+
+    // Check if there is a matching user
+    if (mysqli_num_rows($result) == 1) {
+        // User is authenticated; you can redirect to the next page
+        header("Location: Dashboard.php");
+        exit();
+    } else {
+        // Invalid username or password
+        echo "Invalid login credentials. Please try again.";
+    }
+
+    // Close the database connection
+    mysqli_close($conn);
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="stylesheet" href="loginStyle.css">
+</head>
+
+<body>
+    <header>
+        
+        
+        <a href="#" target="_blank" style="text-decoration:none;" class="logo">Tourism.Co</a>
+        <nav class="navbar">
+                    <a  target="_blank" style="text-decoration:none;" class="logo" href="index2.html">Home</a>
+                    <a  target="_blank" style="text-decoration:none;" class="logo" href="index2.html">about us</a>
+                    <a  target="_blank" style="text-decoration:none;" class="logo" href="showProduct.php">product</a>
+                    <a  target="_blank" style="text-decoration:none;" class="logo" href="index.php">Merchant</a>
+                    <a  target="_blank" style="text-decoration:none;" class="logo" href="Mlogin.html">Admin</a>
+                </nav>
+        
+              
+        </header>
+<div class="form-container">
+    <form action="" method="post">
+        <h3>login now</h3>
+        <input type="name" name="name" required placeholder="enter your name">
+        <input type="email" name="email" required placeholder="enter your email">
+        <input type="password" name="password" required placeholder="enter your password">
+        <input type="submit" name="submit" value="login now" class="form-btn">
+        
+    </form>
+
+</div>
+
+
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="index2.html">home</a>
+            <a href="#about">about us</a>
+            <a href="#">product</a>
+            <a href="#">merchant</a>
+        </div>
+
+        <div class="box">
+            <h3>locations</h3>
+            <a href="#">Malaysia</a>
+            <a href="#">Usa</a>
+            <a href="#">Australia</a>
+            
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#">home</a>
+            <a href="#">about us</a>
+            <a href="#">product</a>
+            <a href="#">merchant</a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#">+60177323004</a>
+            <a href="#">JinVishJovian@gmail.com</a>
+            <a href="#">Help Uni, subang 2 -40170</a>
+            <a href="#">Malaysia</a>
+        </div>
+    </div>
+
+    
+
+</section>
+    
+</body>
+</html>
